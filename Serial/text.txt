@@ -1,0 +1,25 @@
+package com.jbt;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class SerializaitonDemo {
+
+	public static void main(String[] args) throws IOException {
+		emp.firstName = "RAM";
+		emp.ID = 2403;
+		emp.companyName = "Google";
+	
+		try {
+			Employee emp = new Employee("RAM", 2403, "Google");
+			FileOutputStream fileOut = new FileOutputStream("C:\Users\IO Package\src\ser.text");
+			ObjectOutputStream out = new ObjectOutputStream(fileOut);
+			oos.writeObject(emp);
+			oos.flush();
+			oos.close();
+			System.out.printf("Success");
+		} catch (IOException i) {
+			i.printStackTrace();
+		}
+	}
